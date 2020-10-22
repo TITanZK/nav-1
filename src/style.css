@@ -26,9 +26,21 @@ body {
 .globalHeader {
   margin: 20px;
 }
+@media (min-width: 500px) {
+  .globalHeader {
+    margin: 100px 0 60px;
+  }
+}
 .searchForm {
   display: flex;
   justify-content: space-between;
+}
+@media (min-width: 500px) {
+  .searchForm {
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 .searchForm > input {
@@ -50,6 +62,9 @@ body {
 }
 
 .globalMain {
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .siteList {
@@ -59,9 +74,21 @@ body {
   justify-content: space-between;
 }
 
-.siteList > li {
+@media (min-width: 500px) {
+  .siteList {
+    margin-left: 0;
+    margin-right: -25px;
+    justify-content: flex-start;
+  }
 }
-
+.siteList > li {
+  margin-bottom: 10px;
+}
+@media (min-width: 500px) {
+  .siteList > li {
+    margin-right: 25px;
+  }
+}
 .siteList .site {
   width: 160px;
   display: flex;
@@ -69,9 +96,10 @@ body {
   align-items: center;
   flex-direction: column;
   background-color: white;
-  margin-bottom: 10px;
   border-radius: 4px;
   padding: 20px 0;
+  position: relative;
+  cursor: pointer;
 }
 .siteList .site > .logo {
   width: 64px;
@@ -80,8 +108,20 @@ body {
   justify-content: center;
   align-items: center;
   font-size: 64px;
+  /* 大写 */
+  text-transform: uppercase;
 }
 
+.siteList .site > .close {
+  position: absolute;
+  right: 6px;
+  top: 0;
+  display: none;
+}
+.siteList .site:hover > .close {
+  display: block;
+  cursor: default;
+}
 .siteList .site > .link {
   font-size: 14px;
   margin-top: 4px;
