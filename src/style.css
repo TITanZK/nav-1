@@ -10,6 +10,7 @@
   margin: 0;
   padding: 0;
 }
+
 ul,
 ol {
   list-style: none;
@@ -21,14 +22,19 @@ a {
 
 /* style */
 body {
-  background-color: #eee;
+  background: url("./image/bg.png") center center no-repeat;
+}
+@media (max-width: 500px) {
+  body {
+    background: #ccc;
+  }
 }
 .globalHeader {
   margin: 20px;
 }
 @media (min-width: 500px) {
   .globalHeader {
-    margin: 100px 0 60px;
+    margin: 100px 0 80px;
   }
 }
 .searchForm {
@@ -37,28 +43,40 @@ body {
 }
 @media (min-width: 500px) {
   .searchForm {
-    max-width: 400px;
+    max-width: 600px;
     margin-left: auto;
     margin-right: auto;
   }
 }
 
-.searchForm > input {
+.searchForm > label {
   width: 100%;
-  margin-right: 10px;
+}
+
+.searchForm > label > input {
+  width: 100%;
+  /*margin-right: 10px;*/
   height: 40px;
   padding: 0 10px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
+  border: 2px solid #c4c7ce;
+  border-right: none;
+  border-radius: 5px 0 0 5px;
+  outline: none;
 }
+
+.searchForm > label > input:focus {
+  border-color: #4e71f2;
+}
+
 .searchForm > button {
   white-space: nowrap;
   padding: 0 28px;
   border: none;
-  border-radius: 4px;
-  background-color: #0282b9;
+  border-radius: 0 5px 5px 0;
+  background-color: #3697FF;
   color: white;
   font-size: 16px;
+  outline: none;
 }
 
 .globalMain {
@@ -96,7 +114,7 @@ body {
   align-items: center;
   flex-direction: column;
   background-color: white;
-  border-radius: 4px;
+  border-radius: 5px;
   padding: 20px 0;
   position: relative;
   cursor: pointer;
