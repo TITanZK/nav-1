@@ -22,11 +22,16 @@ a {
 
 /* style */
 body {
-  background: url("./image/bg.png") center center no-repeat;
+  display: grid;
+  margin: 0;
+  height: 100vh;
+  background-color: #82466e;
+  animation: backColor 4s infinite;
+  position: relative;
 }
 @media (max-width: 500px) {
-  body {
-    background: #ccc;
+  .mainStyle{
+    display: none!important;
   }
 }
 .globalHeader {
@@ -169,4 +174,126 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+/*动画*/
+.mainStyle {
+  position: absolute;
+  top: 0;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 40px 40px;
+  grid-template-rows: 40px 40px;
+  justify-content: center;
+  align-content: center;
+}
+
+.cube01 {
+  animation: rush 6s infinite linear;
+  background-color: #c0f0b9;
+}
+
+.cube02 {
+  animation: rush2 6s infinite linear;
+  background-color: #f0d8ad;
+}
+
+.cube04 {
+  animation: rush3 6s infinite linear;
+  background-color: #f0addb;
+}
+
+.cube03 {
+  animation: rush4 6s infinite linear;
+  background-color: #c4d8f0;
+}
+
+@keyframes rush {
+  from {
+    transform: translate(0);
+  }
+
+  25% {
+    transform: translate(100%);
+  }
+
+  50% {
+    transform: translate(100%, 100%);
+  }
+
+  75% {
+    transform: translate(0, 100%);
+  }
+}
+
+@keyframes rush2 {
+  from {
+    transform: translate(0);
+  }
+
+  25% {
+    transform: translate(0, 100%);
+  }
+
+  50% {
+    transform: translate(-100%, 100%);
+  }
+
+  75% {
+    transform: translate(-100%, 0);
+  }
+}
+
+@keyframes rush3 {
+  from {
+    transform: translate(0);
+  }
+
+  25% {
+    transform: translate(-100%, 0);
+  }
+
+  50% {
+    transform: translate(-100%, -100%);
+  }
+
+  75% {
+    transform: translate(0, -100%);
+  }
+}
+
+@keyframes rush4 {
+  from {
+    transform: translate(0);
+  }
+
+  25% {
+    transform: translate(0, -100%);
+  }
+
+  50% {
+    transform: translate(100%, -100%);
+  }
+
+  75% {
+    transform: translate(100%);
+  }
+}
+
+@keyframes backColor {
+  from {
+    background-color: #82466e;
+  }
+
+  25% {
+    background-color: #425e82;
+  }
+
+  50% {
+    background-color: #826f4d;
+  }
+
+  75% {
+    background-color: #5e825a;
+  }
 }
